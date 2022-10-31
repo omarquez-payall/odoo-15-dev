@@ -10,7 +10,7 @@ class ProjectTask( models.Model):
         help = "Indique el número del sprint en el que está incluido el ítem"
     )
 
-    priority = fields.Many2one(
+    priority_payall = fields.Many2one(
         string = "Prioridad",
         comodel_name = "payall.task.priority",
         help = "Clasifique el ítem de trabajo según su importancia"
