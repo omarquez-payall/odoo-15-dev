@@ -11,8 +11,7 @@ class AccountAnalyticLine( models.Model):
         if self.task_id:
             self.task_id.message_post( body = 
                 "El usuario " + self.env.user.display_name + " ha modificado la descripcion del registro de horas a " + self.name +". En fecha " +
-                str(fields.Datetime.now()),
-                message_type ="comment"
+                str(fields.Datetime.now())
             )
     
     @api.onchange('date')
@@ -20,8 +19,7 @@ class AccountAnalyticLine( models.Model):
         if self.task_id:
             self.task_id.message_post( body = 
                 "El usuario " + self.env.user.display_name + " ha modificado la fecha del registro de horas a " + str(self.date) +". En fecha " +
-                str(fields.Datetime.now()),
-                message_type ="comment"
+                str(fields.Datetime.now())
             )
     
     @api.onchange('time_spent')
@@ -29,6 +27,5 @@ class AccountAnalyticLine( models.Model):
         if self.task_id:
             self.task_id.message_post( body = 
                 "El usuario " + self.env.user.display_name + " ha modificado las horas realizadas del registro de horas a " + self.time_spent +". En fecha " +
-                str(fields.Datetime.now()),
-                message_type ="comment"
+                str(fields.Datetime.now())
             )
