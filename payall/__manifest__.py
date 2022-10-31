@@ -29,6 +29,7 @@
         'security/ir.model.access.csv',
         'data/prioridad_data.xml',
         'data/peso_data.xml',
+        'data/tipo_registro.xml',
         'views/views.xml',
         'views/templates.xml',
         'views/project_payall_task_priority.xml',
