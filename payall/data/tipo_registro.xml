@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <record id="payall_task_type_1" model="payall.task.type">
+            <field name="name">Análisis</field>
+        </record>
+        <record id="payall_task_type_2" model="payall.task.type">
+            <field name="name">Diseño</field>
+        </record>
+        <record id="payall_task_type_3" model="payall.task.type">
+            <field name="name">Desarrollo</field>
+        </record>
+        <record id="payall_task_type_4" model="payall.task.type">
+            <field name="name">Elaboración de diagramas BPMN</field>
+        </record>
+    </data>
+</odoo>
