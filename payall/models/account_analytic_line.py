@@ -14,12 +14,11 @@ class AccountAnalyticLine( models.Model):
 
 
     def write(self, vals):
-        if 'date' in vals:
-            old_date = vals['date']
+
         result = super( AccountAnalyticLine, self).write(vals)
         if 'name' in vals and vals['name'] and result:
             self.sudo().task_id.message_post( body = 
-                "El usuario " + self.env.user.display_name + " ha modificado la descripcion del registro de horas a " + self.name + ". Y fecha: " + old_date,
+                "El usuario " + self.env.user.display_name + " ha modificado la descripcion del registro de horas a " + self.name,
                 message_type = "comment"
             )
         if 'date' in vals and vals['date'] and result:
@@ -27,13 +26,13 @@ class AccountAnalyticLine( models.Model):
                 "El usuario " + self.env.user.display_name + " ha modificado la descripcion del registro de horas a " + str(self.date),
                 message_type = "comment"
             )
-        if 'time_spent' in vals and vals['unit_amount'] and result:
+        if 'unit_amount' in vals and vals['unit_amount'] and result:
             self.sudo().task_id.message_post( body = 
                 "El usuario " + self.env.user.display_name + " ha modificado las horas realizadas del registro de horas a " + self.unit_amount,
                 message_type = "comment"
             )
         if 'employee_id' in vals and vals['employee_id'] and result:
             self.sudo().task_id.message_post( body = 
-                "El usuario " + self.env.user.display_name + " ha modificado el empleado del registro de horas a " + self.employee_id,
+                "El usuario " + self.env.user.display_name + " ha modificado el empleado del registro de horas a " + self.employee_id.name,
                 message_type = "comment"
             )
