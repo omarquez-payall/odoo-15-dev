@@ -15,17 +15,22 @@ class AccountAnalyticLine( models.Model):
 
     def write(self, vals):
         result = super( AccountAnalyticLine, self).write(vals)
-        if vals['name'] and result:
+        if 'name' in vals and vals['name'] and result:
             self.sudo().task_id.message_post( body = 
                 "El usuario " + self.env.user.display_name + " ha modificado la descripcion del registro de horas a " + self.name,
                 message_type = "comment"
             )
-        if vals['date'] and result:
+        if 'date' in vals and vals['date'] and result:
             self.sudo().task_id.message_post( body = 
                 "El usuario " + self.env.user.display_name + " ha modificado la descripcion del registro de horas a " + self.name,
                 message_type = "comment"
             )
-        if vals['time_spent'] and result:
+        if 'time_spent' in vals and vals['time_spent'] and result:
+            self.sudo().task_id.message_post( body = 
+                "El usuario " + self.env.user.display_name + " ha modificado las horas realizadas del registro de horas a " + self.time_spent,
+                message_type = "comment"
+            )
+        if 'unit_amount' in vals and vals['unit_amount'] and result:
             self.sudo().task_id.message_post( body = 
                 "El usuario " + self.env.user.display_name + " ha modificado las horas realizadas del registro de horas a " + self.time_spent,
                 message_type = "comment"
