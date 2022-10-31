@@ -6,7 +6,7 @@ from odoo import models, fields, api
 class AccountAnalyticLine( models.Model):
     _inherit = 'account.analytic.line'
 
-    line_type = fields.Many2One(
+    line_type = fields.Many2one(
         string = "Tipo Registro",
         comodel_name = "payall.task.type",
         help = "Seleccione la opción que describe con mayor precisión la actividad ejecutada"
