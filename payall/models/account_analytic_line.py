@@ -17,8 +17,7 @@ class AccountAnalyticLine( models.Model):
     def task_notify_name(self):
         if self.task_id:
             self.sudo().task_id._message_post( body = 
-                "El usuario " + self.env.user.display_name + " ha modificado la descripcion del registro de horas a " + self.name +". En fecha " +
-                str(fields.Datetime.now()),
+                "El usuario " + self.env.user.display_name + " ha modificado la descripcion del registro de horas a " + self.name,
                 message_type = "comment"
             )
     
@@ -26,8 +25,7 @@ class AccountAnalyticLine( models.Model):
     def task_notify_date(self):
         if self.task_id:
             self.sudo().task_id._message_post( body = 
-                "El usuario " + self.env.user.display_name + " ha modificado la fecha del registro de horas a " + str(self.date) +". En fecha " +
-                str(fields.Datetime.now()),
+                "El usuario " + self.env.user.display_name + " ha modificado la fecha del registro de horas a " + str(self.date),
                 message_type = "comment"
             )
     
@@ -35,7 +33,6 @@ class AccountAnalyticLine( models.Model):
     def task_notify_hours(self):
         if self.task_id:
             self.sudo().task_id._message_post( body = 
-                "El usuario " + self.env.user.display_name + " ha modificado las horas realizadas del registro de horas a " + self.time_spent +". En fecha " +
-                str(fields.Datetime.now()),
+                "El usuario " + self.env.user.display_name + " ha modificado las horas realizadas del registro de horas a " + self.time_spent,
                 message_type = "comment"
             )
