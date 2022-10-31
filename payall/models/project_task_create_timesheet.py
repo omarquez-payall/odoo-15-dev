@@ -2,7 +2,7 @@
 
 from odoo import models, fields, api
 
-class ProjectTaskCreateTimesheet( models.Model):
+class ProjectTaskCreateTimesheet( models.TransientModel):
     _inherit = 'project.task.create.timesheet'
 
     line_type = fields.Many2one(
