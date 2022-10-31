@@ -25,13 +25,13 @@ class AccountAnalyticLine( models.Model):
                 "El usuario " + self.env.user.display_name + " ha modificado la descripcion del registro de horas a " + self.name,
                 message_type = "comment"
             )
-        if 'time_spent' in vals and vals['time_spent'] and result:
+        if 'amount' in vals and vals['amount'] and result:
             self.sudo().task_id.message_post( body = 
                 "El usuario " + self.env.user.display_name + " ha modificado las horas realizadas del registro de horas a " + self.time_spent,
                 message_type = "comment"
             )
-        if 'unit_amount' in vals and vals['unit_amount'] and result:
+        if 'employee_id' in vals and vals['employee_id'] and result:
             self.sudo().task_id.message_post( body = 
-                "El usuario " + self.env.user.display_name + " ha modificado las horas realizadas del registro de horas a " + self.time_spent,
+                "El usuario " + self.env.user.display_name + " ha modificado el empleado del registro de horas a " + self.name,
                 message_type = "comment"
             )
