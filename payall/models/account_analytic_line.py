@@ -25,7 +25,7 @@ class AccountAnalyticLine( models.Model):
                 "El usuario " + self.env.user.display_name + " ha modificado la descripcion del registro de horas a " + self.name,
                 message_type = "comment"
             )
-        if 'amount' in vals and vals['amount'] and result:
+        if 'time_spent' in vals and vals['amount'] and result:
             self.sudo().task_id.message_post( body = 
                 "El usuario " + self.env.user.display_name + " ha modificado las horas realizadas del registro de horas a " + self.time_spent,
                 message_type = "comment"
