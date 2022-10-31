@@ -34,8 +34,10 @@
         'views/project_payall_task_priority.xml',
         'views/hr_timesheet_project_task_create_timesheet_inherit.xml',
         'views/hr_timesheet_project_task_inherit.xml',
+        'views/hr_timesheet_create_timesheet_wizard_form.xml',
         'views/project_payall_task_sprint.xml',
-        'views/project_payall_task_peso.xml'
+        'views/project_payall_task_peso.xml',
+        'views/project_payall_task_type.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
