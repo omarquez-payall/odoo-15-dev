@@ -24,7 +24,7 @@ class ProjectTask( models.Model):
 
     def write(self, vals):
         result = super( ProjectTask, self).write(vals)
-        if vals['peso'] and result:
+        if 'peso' in vals and vals['peso'] and result:
             self.sudo().message_post( body = 
                 "El usuario " + self.env.user.display_name + " ha modificado el peso a  " + self.peso.name,
                 message_type = "comment"
