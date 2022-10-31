@@ -4,3 +4,4 @@ from . import project_task
 from . import priority
 from . import peso
 from . import account_analytic_line
+from . import task_line_type
