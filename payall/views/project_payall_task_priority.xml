@@ -5,7 +5,7 @@
             <field name="model">payall.task.priority</field>
             <field name="arch" type="xml">
                 <tree editable="top" create="1" delete="1" multi_edit="1" string="Prioridad de las actividades">
-                    <field name = "priority" required="1"/>
+                    <field name = "name" required="1"/>
                 </tree>
             </field>
         </record>
