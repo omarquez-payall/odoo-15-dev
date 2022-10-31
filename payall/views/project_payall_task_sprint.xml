@@ -8,7 +8,7 @@
             <xpath expr="//field[@name='parent_id']" position="after">
                 <field name = "sprint"/>
                 <field name = "peso" />
-                <field name = "priority"/>
+                <field name = "priority_payall"/>
             </xpath>
         </field>
     </record>
