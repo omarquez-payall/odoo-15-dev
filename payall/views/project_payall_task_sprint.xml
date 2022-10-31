@@ -6,9 +6,9 @@
         <field name="inherit_id" ref="project.view_task_form2"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='parent_id']" position="after">
-                <field name = "sprint"/>
-                <field name = "peso" />
-                <field name = "priority_payall"  string="Prioridad de HU"/>
+                <field name = "sprint" />
+                <field name = "peso" required = "1" />
+                <field name = "priority_payall" string="Prioridad de HU" required = "1"/>
             </xpath>
         </field>
     </record>
