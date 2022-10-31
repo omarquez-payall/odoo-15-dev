@@ -22,9 +22,10 @@ class ProjectTask( models.Model):
         help = "Clasifique el ítem según la magnitud del trabajo requerido"
     )
 
-    @api.onchange('peso')
-    def task_notify_peso(self):
-        self.sudo().message_post( body = 
-            "El usuario " + self.env.user.display_name + " ha modificado el peso a  " + self.peso.name,
-            message_type = "comment"
-        )
+    def write(self, vals):
+        result = super( ProjectTask, self).write(vals)
+        if vals['peso'] and result:
+            self.sudo().message_post( body = 
+                "El usuario " + self.env.user.display_name + " ha modificado el peso a  " + self.peso.name,
+                message_type = "comment"
+            )
