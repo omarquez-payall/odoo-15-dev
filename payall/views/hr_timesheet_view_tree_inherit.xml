@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="hr_timesheet_view_tree_inherit">
+            <field name="name">timesheet.view.tree.inherit</field>
+            <field name="model">account.analytic.line</field>
+            <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_tree"/>
+            <!-- <field name="groups_id" eval="[(4, ref('payall.payall_project_user'))]"/> -->
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='task_id']" position="after">
+                    <field name="line_type" required="1"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -5,6 +5,12 @@ from odoo import models, fields, api
 class ProjectTask( models.Model):
     _inherit = 'project.task'
 
+    line_type = fields.Many2one(
+        string = "Tipo de Tarea",
+        comodel_name = "payall.task.type",
+        help = "Seleccione la opción que describe con mayor precisión la actividad ejecutada"
+    )
+
     sprint = fields.Integer(
         string = "Sprint",
         help = "Indique el número del sprint en el que está incluido el ítem"
@@ -21,6 +27,7 @@ class ProjectTask( models.Model):
         comodel_name = "payall.task.peso",
         help = "Clasifique el ítem según la magnitud del trabajo requerido"
     )
+
 
     def write(self, vals):
         result = super( ProjectTask, self).write(vals)
