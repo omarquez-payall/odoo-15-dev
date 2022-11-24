@@ -16,6 +16,9 @@ class AccountAnalyticLine( models.Model):
     def convert_float_to_timestamp(self, unit_amount):
         hours, minutes = divmod(unit_amount, 60)
         return "%02d:%02d"%(hours,minutes)
+    
+    
+
 
     def write(self, vals):
 

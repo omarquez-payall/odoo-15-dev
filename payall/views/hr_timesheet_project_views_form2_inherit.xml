@@ -8,11 +8,12 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='employee_id']" position="after">
                     <field name="line_type"/>
-
                 </xpath>
-                <!-- <xpath expr="//field[@name='unit_amount']" position="replace">
-                    <field name="unit_amount" decoration-danger="unit_amount &gt; 24"/>
-                </xpath> -->
+                <xpath expr="//button[@name='action_open_task']" position="before">
+                    <field name="peso"/>
+                    <field name="priority_payall"/>
+                    <field name="line_type"/>
+                </xpath>
             </field>
         </record>
     </data>

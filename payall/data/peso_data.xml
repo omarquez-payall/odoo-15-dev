@@ -18,8 +18,5 @@
         <record id="payall_task_peso_6" model="payall.task.peso">
             <field name="name">8</field>
         </record>
-        <record id="payall_task_peso_7" model="payall.task.peso">
-            <field name="name">8</field>
-        </record>
     </data>
 </odoo>
