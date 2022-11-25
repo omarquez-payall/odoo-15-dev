@@ -28,6 +28,8 @@ class ProjectTask( models.Model):
         help = "Clasifique el ítem según la magnitud del trabajo requerido"
     )
 
+    message_ids = fields.One2many(readonly=True)
+    activity_ids = fields.One2many(readonly=True)
     peso_computed = fields.Integer(string='Peso', store=True)
     prioridad_computed = fields.Integer(string='Prioridad', store=True)
 

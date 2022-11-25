@@ -11,17 +11,10 @@ class Peso(models.Model):
     name = fields.Char(
         string = "Peso"
     )
-
-    # @api.constrains('name')
-    # def _check_duplicates_peso(self):
-    #     for record in self:
-    #         record.value_peso = self.env['payall.task.peso'].search([('name', '=', record.peso.name)])
-    #         if record.value_peso:
-    #             raise ValidationError('El valor de peso ya está registrado')
     
-    @api.onchnge('name')
+    @api.onchange('name')
     def _check_duplicates_peso(self):
         for record in self:
-            record.name = self.env['payall.task.peso'].search([('name', '=', record.name)])
-            if record.name:
-                raise ValidationError('El valor de peso ya está registrado')
+            name = self.env['payall.task.peso'].search([('name', '=', record.name)])
+            if name:
+                raise UserError('El valor de peso ya está registrado')
