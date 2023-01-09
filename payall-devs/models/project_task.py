@@ -36,8 +36,8 @@ class ProjectTask( models.Model):
 
     message_ids = fields.One2many(readonly=True)
     activity_ids = fields.One2many(readonly=True)
-    peso_computed = fields.Integer(string='Peso', store=True)
-    prioridad_computed = fields.Integer(string='Prioridad', store=True)
+    peso_computed = fields.Integer(string='Peso computado', store=True)
+    prioridad_computed = fields.Integer(string='Prioridad computado', store=True)
 
 
     def write(self, vals):
